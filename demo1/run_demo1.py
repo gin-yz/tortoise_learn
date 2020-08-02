@@ -1,7 +1,5 @@
-from asyncio.events import AbstractEventLoop
-
 from tortoise import Tortoise
-from demo1.modes import Tournament,Event,Team
+from demo1.modes import Tournament
 import asyncio
 
 async def init():
@@ -23,5 +21,5 @@ if __name__ == '__main__':
     task1 = loop.create_task(init())
     loop.run_until_complete(task1)
 
-    loop.create_task(tournament_create())
-    loop.run_forever()
+    task2 = loop.create_task(tournament_create())
+    loop.run_until_complete(task2)

@@ -1,6 +1,6 @@
 from tortoise import Tortoise
 import asyncio
-from demo1.modes import Tournament,Event,Team
+
 async def init():
     user = 'root'
     password = '123456'
@@ -13,4 +13,5 @@ async def init():
     )
     #按照模型生成表
     await Tortoise.generate_schemas()
+
 asyncio.run(init())
